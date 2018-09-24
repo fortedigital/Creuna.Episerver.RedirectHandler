@@ -3,7 +3,6 @@ using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
 using EPiServer.ServiceLocation;
 using Creuna.Episerver.RedirectHandler.TestApp.Business.Rendering;
-using Creuna.Episerver.RedirectHandler.TestApp.Helpers;
 using EPiServer.Web.Mvc;
 using EPiServer.Web.Mvc.Html;
 using StructureMap;
@@ -17,9 +16,9 @@ namespace Creuna.Episerver.RedirectHandler.TestApp.Business.Initialization
     {
         public void ConfigureContainer(ServiceConfigurationContext context)
         {
-            context.Container.Configure(ConfigureContainer);
+            context.StructureMap().Configure(ConfigureContainer);
 
-            DependencyResolver.SetResolver(new StructureMapDependencyResolver(context.Container));
+            DependencyResolver.SetResolver(new StructureMapDependencyResolver(context.StructureMap()));
         }
 
         private static void ConfigureContainer(ConfigurationExpression container)

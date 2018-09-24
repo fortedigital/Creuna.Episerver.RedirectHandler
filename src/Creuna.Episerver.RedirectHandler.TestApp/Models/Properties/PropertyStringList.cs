@@ -62,12 +62,6 @@ namespace Creuna.Episerver.RedirectHandler.TestApp.Models.Properties
                 }
 
             }
-        }
-
-        public override IPropertyControl CreatePropertyControl()
-        {
-            //No support for legacy edit mode
-            return null;
-        }
+        }      
     }
 }
